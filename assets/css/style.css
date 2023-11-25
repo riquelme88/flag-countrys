@@ -1,0 +1,515 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.white-main{
+    background-color: hsl(0, 0%, 98%);
+}
+
+header{
+    font-family: 'Nunito Sans', sans-serif;
+    display: flex;
+    box-shadow: 0px 0px 6px #ccc;
+    height: 85px;
+    justify-content: space-between;
+    padding: 0px 75px;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: all ease 0.5s;
+}
+
+.white-header{
+    background-color: white;
+}
+
+.white-header svg{
+    fill-rule: evenodd;
+}
+
+.dark-header{
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+    box-shadow: 0px 0px 10px hsl(207, 26%, 17%);
+}
+
+.dark-mode{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.dark-mode p{
+    margin-left: 7px;
+    font-weight: 600;
+}
+
+main{
+    padding-left: 75px;
+    padding-right: 75px;
+    width: 100vw;
+    padding-bottom: 30px;
+    transition: all ease 0.5s;
+}
+
+.above{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#search-countrys{
+    height: 45px;
+    width: 420px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0px 0px 10px #ccc;
+    padding-left: 60px;
+    outline: 0;
+}
+
+#search-countrys::placeholder{
+    color: hsl(0, 0%, 52%);
+}
+
+.above .search-svg{
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 20px;
+    width: 22px;
+    color: hsl(0, 0%, 52%);
+}
+
+.filter-region{
+    background-color: white;
+    width: 190px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px 10px #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    z-index: 2;
+}
+
+.shevron{
+    cursor: pointer;
+}
+
+#countrys{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 44px;
+    max-width: 100%
+}
+
+.country{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 5px #ccc;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.country img{
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.infos p{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.population{
+    margin-top: 12px;
+}
+
+.region{
+    margin-top: 5px;
+}
+
+.capital{
+    margin-top: 5px;
+}
+
+.infos p span{
+    font-weight: 300;
+}
+
+.regions{
+    position: absolute;
+    right: 0;
+    margin-right: 58px;
+    background-color: white;
+    width: 190px;
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    margin-top: 0px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #ccc;
+    height: 0px;
+    z-index: 1;
+    /*height : 160px, margin-top : 60px*/
+}
+
+.show{
+    margin-top: 60px;
+    height: 160px;
+    transition: all ease 0.5s;
+}
+
+
+.regions p{
+    margin-top: 11px;
+    display: none;
+    cursor: pointer;
+}
+
+.dark-main{
+    background-color: hsl(207, 26%, 17%);
+}
+
+.dark-main .above #search-countrys{
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+    box-shadow: 0px 0px 6px hsl(207, 26%, 12%);
+}
+
+.dark-main .above #search-countrys::placeholder{
+    color: white;
+}
+
+.dark-main .search-svg{
+    color: white;
+}
+
+.dark-main main{
+    color: white;
+}
+
+.dark-main .filter-region{
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0px 0px 6px hsl(207, 26%, 12%);
+}
+
+.dark-main .regions{
+    box-shadow: 0px 0px 6px hsl(207, 26%, 12%);
+    background-color: hsl(209, 23%, 22%);
+}
+
+.dark-main .country{
+    box-shadow: 0px 0px 6px hsl(207, 26%, 12%);
+    background-color: hsl(209, 23%, 22%);
+}
+
+.details{
+    width: 100vw;
+    height: 100px;
+    position: absolute;
+    height: calc(100vh - 94px);
+    margin-top: 7px;
+    background-color: white;
+    z-index: 3;
+    padding-left: 75px;
+    display: none;
+    transition: all ease 0.5s;
+}
+
+#back{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 10%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 0px 0px 10px #aaa;
+    cursor: pointer;
+}
+
+#back svg{
+    margin-left: -15px;
+    margin-right: 5px;
+}
+
+.info-country{
+    display: flex;
+}
+
+.details img{
+    width: 35%;
+    height: 47vh
+}
+
+.details h2{
+    margin-left: 37%;
+    font-size: 32px;
+    position: absolute;
+}
+
+.details .infos-l{
+    margin-left: 37%;
+    position: absolute;
+    
+}
+.infos-r{
+    margin-left: 55%;
+    position: absolute;
+}
+
+.infos-details{
+    margin-top: 4%;
+    
+}
+
+.infos-details p{
+    font-weight: 600;
+    margin-top: 2%;
+}
+
+.infos-details span{
+    font-weight: 300;
+}
+
+.border-countries{
+    display: flex;
+    margin-left: 39%;
+    margin-top: -4%;
+    max-width: 59%;
+    flex-wrap: wrap;
+}
+
+.border-countries h4{
+    margin-right: 8px;
+}
+
+.border-countries .countries{
+    margin-left: 1%;
+    box-shadow: 0px 0px 5px #ccc;
+    width: 8%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 3px;
+    margin-bottom: 2%;
+    
+}
+
+.dark-main .details{
+    background-color: hsl(207, 26%, 17%);
+    color: white;
+}
+
+.dark-main #back{
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+    box-shadow: 0px 0px 10px hsl(207, 26%, 12%);
+}
+
+.dark-main .border-countries p{
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0px 0px 10px hsl(207, 26%, 12%);
+}
+
+@media screen and (min-width: 1920px) {
+    .infos p{
+        font-size: 21px;
+        font-weight: 600;
+    }
+
+    .infos h3{
+        font-size: 38px;
+    }
+
+    .details h2{
+        font-size: 50px;
+    }
+
+    .infos-details p{
+        font-size: 25px;
+    }
+
+    .border-countries h3{
+        font-size: 21px;
+    }
+
+    .border-countries .countries{
+        font-size: 23px;
+        width: 6%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+    .country{
+        height: 110%;
+        padding-right: 10px;
+    }
+}
+@media screen and (min-width: 300px) and (max-width: 900px) {
+    header{
+        padding: 0px 20px;
+    }
+    
+    header h1{
+        font-size: 16px;
+        
+    }
+
+    .dark-mode p{
+        font-size: 13px;
+    }
+
+    .dark-mode svg{
+        width: 30px;
+    }
+
+    main{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .above{
+        flex-direction: column;
+        margin-top: 8%;
+    }
+    
+    #search-countrys{
+        width: 100%;
+    }
+
+    .filter-region{
+        margin-top: 5%;
+    }
+
+    .regions{
+        right: inherit;
+    }
+
+    #countrys{
+        grid-template-columns: 1fr;
+        margin-top: 15%;
+    }
+
+    .country{
+        width: 70%;
+        height: 100%;
+        margin: auto;
+        margin-bottom: 20%;
+    }
+
+    .details{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .info-country{
+       flex-direction: column;
+       align-items: flex-start;
+       
+    }
+
+
+
+    .infos h3{
+        font-size: 40px;
+    }
+
+    .infos p{
+        font-size: 20px;
+        margin-top: 5%;
+    }
+
+    #back{
+        width: 30%;
+    }
+
+    .details img{
+        width: 100%;
+    }
+
+    .info-country h2{
+        position: relative;
+        margin: 0;
+        margin-top: 8%;
+    }
+
+    .infos-l{
+        margin-top: 76%;
+        margin-left: 0% !important;
+    }
+
+    .infos-r{
+        margin-top: 100%;
+        margin-left: 0%;
+    }
+
+    .border-countries{
+        margin: 0;
+        margin-top: 70%;
+        max-width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .border-countries .countries{
+        margin-left: 2%;
+        width: 13%;
+        font-size: 12px;
+    }
+
+    .show{
+        margin-top: 140px;
+        height: 160px;
+        
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .details img{
+        height: inherit;
+    }
+
+    .border-countries{
+        margin-top: 250px;
+    }
+
+    .infos-details{
+        font-size: 13px;
+    }
+
+    #back{
+        font-size: 12px;
+    }
+
+    .infos-r{
+        margin-top: 110%;
+    }
+}
