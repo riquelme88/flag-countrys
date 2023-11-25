@@ -512,4 +512,13 @@ main{
     .infos-r{
         margin-top: 110%;
     }
+
+    .infos h3{
+        font-size: 30px;
+    }
+
+    .infos p{
+        font-size: 15px;
+        margin-top: 5%;
+    }
 }
